@@ -43,6 +43,9 @@ int		main(int argc, char **argv);
 bool	arg_check(int argnum, char **arg);
 
 //utils------------------------------------//
-bool	arg_check(int argnum, char **arg);
+bool	argis_null(void);
+bool	argnum_error(void);
+bool	argval_error(void);
+bool	argzero_error(void);
 
 #endif

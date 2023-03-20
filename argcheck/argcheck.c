@@ -15,23 +15,28 @@ static	bool	argment_check(char *argline)
 	return (true);
 }
 
+static  bool	zeroch(char *arg)
+{
+	if (arg[0] == '0' && arg[1] == '\0')
+		return (true);
+	return (false);
+}
+
 bool	arg_check(int argnum, char **arg)
 {
 	size_t	arg_position;
 
+    if (arg == NULL)
+        return (argis_null());
 	if (argnum != 5 && argnum != 6)
-	{
-		argnum_error();
-		return (false);
-	}
+		return (argnum_error());
 	arg_position = 1;
 	while (arg[arg_position] != NULL)
 	{
+        if (arg_position == 1 && zeroch(arg[arg_position]) == true)
+            return (argzero_error());
 		if (argment_check(arg[arg_position]) == false)
-		{
-			argminus_error();
-			return (false);
-		}
+			return (argval_error());
 		arg_position++;
 	}
 	return (true);
