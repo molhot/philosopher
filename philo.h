@@ -24,6 +24,7 @@ typedef struct all_info {
 	size_t			eat_tm;
 	size_t			sleep_tm;
 	size_t			die_tm;
+	size_t			eat_count;
 	int				eatlimit;
 	bool			dieornot;
 }	t_allinfo;
@@ -39,18 +40,34 @@ typedef struct philo_info{
 	t_allinfo		*all_info;
 }t_philo;
 
-int		main(int argc, char **argv);
+int			main(int argc, char **argv);
 //1 argcheck//
-bool	arg_check(int argnum, char **arg);
+bool		arg_check(int argnum, char **arg);
 //2 ready philoinfo//
+bool		ready_samephilo(t_allinfo *info);
+//3 start thread//
+bool		start_thread(t_allinfo *info);
+bool		start_thread_u(t_allinfo *info);
+
+//life//
+void		*philolife_life(void *info_t);
+void		*philolife_life_ult(void *info_t);
+//checker//
+void		*philo_checker(void *info_i);
+//unlockfork
+void		unlock_onefork(t_philo *info, int *f);
+bool		error_unlockonefork(t_philo *info, int *f);
+void		unlock_allfork(t_philo *info, int *l_f, int *r_f);
+bool		error_unlokallfork(t_philo *info, int *l_f, int *r_f);
 
 //utils------------------------------------//
-bool	argis_null(void);
-bool	argnum_error(void);
-bool	argval_error(void);
-bool	argzero_error(void);
-bool	malloc_error(void);
-bool	mutex_initmiss(void);
-int		ft_atoi(const char *str);
+bool		argis_null(void);
+bool		argnum_error(void);
+bool		argval_error(void);
+bool		argzero_error(void);
+bool		malloc_error(void);
+bool		mutex_initmiss(void);
+int			ft_atoi(const char *str);
+long long	getnowtime(void);
 
 #endif

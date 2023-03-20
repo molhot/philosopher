@@ -2,6 +2,8 @@ NAME = philo
 
 SRCS = main.c\
 		argcheck/argcheck.c\
+		ready_samephilo.c\
+		thread/limit_thread.c\
 		utils/putserror.c utils/putserror2.c utils/ft_atoi.c\
 
 OBJS = $(SRCS:.c=.o)

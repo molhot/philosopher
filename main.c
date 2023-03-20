@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 01:22:22 by user              #+#    #+#             */
-/*   Updated: 2023/03/21 02:26:27 by user             ###   ########.fr       */
+/*   Updated: 2023/03/21 03:29:16 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ static	bool	ready_philoinfo(t_allinfo *val, char **argv, int argc)
 	val->eat_tm = (size_t)ft_atoi(argv[3]);
 	val->sleep_tm = (size_t)ft_atoi(argv[4]);
 	val->dieornot = false;
+	val->eat_count = 0;
 	if (argc == 6)
 		val->eatlimit = ft_atoi(argv[5]);
 	else
@@ -67,4 +68,5 @@ int main(int argc, char **argv)
 		return (1);
 	if (ready_samephilo(&all) == false)
 		return (1);
+	
 }

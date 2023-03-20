@@ -6,13 +6,13 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 02:24:57 by user              #+#    #+#             */
-/*   Updated: 2023/03/21 02:40:13 by user             ###   ########.fr       */
+/*   Updated: 2023/03/21 03:02:46 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-bool	destoroy_allmutex_e(t_allinfo *info)
+static bool	destoroy_allmutex_e(t_allinfo *info)
 {
 	size_t	position;
 
