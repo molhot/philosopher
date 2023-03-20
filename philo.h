@@ -17,6 +17,7 @@ typedef struct philo_info	t_philo;
 
 typedef struct all_info {
 	pthread_mutex_t	*forks;
+	pthread_mutex_t	writelock;
     pthread_t		checker;
 	t_philo			*philoinfo;
 	size_t			philo_num;
@@ -41,11 +42,15 @@ typedef struct philo_info{
 int		main(int argc, char **argv);
 //1 argcheck//
 bool	arg_check(int argnum, char **arg);
+//2 ready philoinfo//
 
 //utils------------------------------------//
 bool	argis_null(void);
 bool	argnum_error(void);
 bool	argval_error(void);
 bool	argzero_error(void);
+bool	malloc_error(void);
+bool	mutex_initmiss(void);
+int		ft_atoi(const char *str);
 
 #endif

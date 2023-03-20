@@ -2,7 +2,7 @@ NAME = philo
 
 SRCS = main.c\
 		argcheck/argcheck.c\
-		utils/putserror.c\
+		utils/putserror.c utils/putserror2.c utils/ft_atoi.c\
 
 OBJS = $(SRCS:.c=.o)
 
